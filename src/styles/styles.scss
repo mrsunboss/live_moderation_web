@@ -1,0 +1,23 @@
+/* Variables */
+$vin-blue: #5bb7db;
+$vin-green: #60b044;
+$vin-red: #ff0000;
+
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  list-style: none;
+}
+/* Styles */
+body {
+  font-family: "微軟正黑體";
+  overflow: hidden;
+  height: 100%;
+  background-color: #ecf0f5;
+
+}
+
+html,div[data-reactroot],#app{
+    height: 100%;
+}
