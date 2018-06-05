@@ -24,7 +24,7 @@ class IndexPage extends React.Component {
     this.props.indexActions.setCurrent(data)
   }
   renderImage = (data) => {
-    let img = data.headimg
+    let img = data.live_img
     return (
         <img onClick={()=>this.click(data)}  src={img}/>
     )

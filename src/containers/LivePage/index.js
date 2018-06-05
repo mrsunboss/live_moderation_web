@@ -27,7 +27,6 @@ class IndexPage extends React.Component {
   }
   componentWillUnmount() {
     this.props.indexActions.initData()    
-    console.log(global.rick)
     clearInterval(global.rick)
   }
   render() {
@@ -36,11 +35,16 @@ class IndexPage extends React.Component {
     return (
       <div className="live-page" >
         <img src={this.props.index.current.headimg} />  
-        <img src={this.props.index.data.url} />  
+        <img src={`data:image/png;base64,${this.props.index.fileStream}`} />  
         <p>AdultClassificationScore:{this.props.index.data.data.AdultClassificationScore}</p>
         <p>IsImageAdultClassified:{this.props.index.data.data.IsImageAdultClassified?'true':'false'}</p>
         <p>RacyClassificationScore:{this.props.index.data.data.RacyClassificationScore}</p>
-        <p>IsImageRacyClassified:{this.props.index.data.data.IsImageRacyClassified? 'true':'false'}</p>
+        <p>IsImageRacyClassified:{this.props.index.data.data.IsImageRacyClassified ? 'true' : 'false'}</p>
+        {this.props.index.data.data.IsImageRacyClassified ?
+          <p className="red">兒童不宜</p>
+          :
+          ''
+        }
       </div>
     );
   }
